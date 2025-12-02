@@ -1,0 +1,130 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Mozaic",
+  "scopeName": "source.mozaic",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#c1"
+    },
+    {
+      "include": "#c2"
+    },
+    {
+      "include": "#c3"
+    },
+    {
+      "include": "#c4"
+    },
+    {
+      "include": "#c5"
+    },
+    {
+      "include": "#c6"
+    },
+    {
+      "include": "#c7"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "match": "//.*$",
+          "name": "comment.line.double-slash.mozaic"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\\{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.mozaic"
+            }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.mozaic"
+            }
+          },
+          "name": "string.quoted.other.mozaic"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "match": "\\b\\d+(?:\\.\\d+)?\\b",
+          "name": "constant.numeric.mozaic"
+        }
+      ]
+    },
+    "c1": {
+      "patterns": [
+        {
+          "match": "\\{\\}",
+          "name": "string.quoted.other.mozaic"
+        }
+      ]
+    },
+    "c2": {
+      "patterns": [
+        {
+          "match": "\\bendwhile\\b|\\belseif\\b|\\bendfor\\b|\\brepeat\\b|\\bendif\\b|\\bfalse\\b|\\buntil\\b|\\bwhile\\b|\\bcall\\b|\\belse\\b|\\btrue\\b|\\bfor\\b|\\bif\\b",
+          "name": "keyword.control.mozaic"
+        }
+      ]
+    },
+    "c3": {
+      "patterns": [
+        {
+          "match": "\\*|\\+|\\-",
+          "name": "keyword.operator.mozaic"
+        }
+      ]
+    },
+    "c4": {
+      "patterns": [
+        {
+          "match": "\\bGetXYMorphValue\\b|\\bGetAUParameter\\b|\\bTranslateCurve\\b|\\bTranslateScale\\b|\\bScaleQuantize\\b|\\bGetKnobValue\\b|\\bGetNoteState\\b|\\bRootNoteName\\b|\\bGetLFOValue\\b|\\bMotionPitch\\b|\\bMotionRoll\\b|\\bSystemTime\\b|\\bUnassigned\\b|\\bGetXValue\\b|\\bGetYValue\\b|\\bMotionYaw\\b|\\bRoundDown\\b|\\bScaleName\\b|\\bNoteName\\b|\\bPadState\\b|\\bInScale\\b|\\bRoundUp\\b|\\bRandom\\b|\\bLog10\\b|\\bRound\\b|\\bClip\\b|\\bLogn\\b|\\bSqrt\\b|\\bTanh\\b|\\bAbs\\b|\\bCos\\b|\\bDiv\\b|\\bExp\\b|\\bPow\\b|\\bSin\\b|\\bTan\\b",
+          "name": "support.function.builtin.mozaic"
+        }
+      ]
+    },
+    "c5": {
+      "patterns": [
+        {
+          "match": "\\bSendMIDIProgramChange\\b|\\bSendMIDIBankSelect\\b|\\bSendMIDIPitchbend\\b|\\bSendMIDIThruOnCh\\b|\\bSetTimerInterval\\b|\\bResetNoteStates\\b|\\bSendMIDINoteOff\\b|\\bSendMIDINoteOn\\b|\\bSetAUParameter\\b|\\bSendSysexThru\\b|\\bSetMetroSwing\\b|\\bConfigureMPE\\b|\\bFlashUserLed\\b|\\bReceiveSysex\\b|\\bSendMIDIThru\\b|\\bSetKnobValue\\b|\\bSetMetroPPQN\\b|\\bSetNoteState\\b|\\bSetShortName\\b|\\bCustomScale\\b|\\bPresetScale\\b|\\bSendMIDIOut\\b|\\bSetRootNote\\b|\\bSetXYValues\\b|\\bLabelKnobs\\b|\\bResetTimer\\b|\\bSendMIDICC\\b|\\bSetLFOType\\b|\\bShowLayout\\b|\\bStartTimer\\b|\\bCopyArray\\b|\\bFillArray\\b|\\bLabelKnob\\b|\\bLabelPads\\b|\\bSendSysex\\b|\\bStopTimer\\b|\\bColorPad\\b|\\bFlashPad\\b|\\bLabelPad\\b|\\bLatchPad\\b|\\bResetLFO\\b|\\bSetupLFO\\b|\\bLabelXY\\b|\\bLogTime\\b|\\bExit\\b|\\bDec\\b|\\bInc\\b|\\bLog\\b",
+          "name": "support.function.mozaic"
+        }
+      ]
+    },
+    "c6": {
+      "patterns": [
+        {
+          "match": "\\b@OnAUParameter\\b|\\b@OnMidiNoteOff\\b|\\b@OnKnobChange\\b|\\b@OnMetroPulse\\b|\\b@OnMidiNoteOn\\b|\\b@Description\\b|\\b@OnHostStart\\b|\\b@OnMidiInput\\b|\\b@OnPedalDown\\b|\\b@OnShiftDown\\b|\\b@OnHostStop\\b|\\b@OnMidiNote\\b|\\b@OnXYChange\\b|\\b@OnNewBeat\\b|\\b@OnPadDown\\b|\\b@OnPedalUp\\b|\\b@OnShiftUp\\b|\\b@OnMidiCC\\b|\\b@OnNewBar\\b|\\b@OnPadUp\\b|\\b@OnSysex\\b|\\b@OnTimer\\b|\\b@OnLoad\\b",
+          "name": "entity.name.function.event.mozaic"
+        }
+      ]
+    },
+    "c7": {
+      "patterns": [
+        {
+          "match": "\\bMIDISustainPedalDown\\b|\\bHostBeatsPerMeasure\\b|\\bCurrentMetroPulse\\b|\\bLastAUParameter\\b|\\bLastPadVelocity\\b|\\bMIDIVelocity\\b|\\bShiftPressed\\b|\\bHostRunning\\b|\\bMIDIChannel\\b|\\bMIDICommand\\b|\\bQuarterNote\\b|\\bHostTempo\\b|\\bMIDIByte1\\b|\\bMIDIByte2\\b|\\bMIDIByte3\\b|\\bSysexSize\\b|\\bGLOBAL10\\b|\\bGLOBAL11\\b|\\bGLOBAL12\\b|\\bGLOBAL13\\b|\\bGLOBAL14\\b|\\bGLOBAL15\\b|\\bGLOBAL16\\b|\\bGLOBAL17\\b|\\bGLOBAL18\\b|\\bGLOBAL19\\b|\\bGLOBAL20\\b|\\bGLOBAL21\\b|\\bGLOBAL22\\b|\\bGLOBAL23\\b|\\bGLOBAL24\\b|\\bGLOBAL25\\b|\\bGLOBAL26\\b|\\bGLOBAL27\\b|\\bGLOBAL28\\b|\\bGLOBAL29\\b|\\bGLOBAL30\\b|\\bGLOBAL31\\b|\\bGLOBAL32\\b|\\bGLOBAL33\\b|\\bGLOBAL34\\b|\\bGLOBAL35\\b|\\bGLOBAL36\\b|\\bGLOBAL37\\b|\\bGLOBAL38\\b|\\bGLOBAL39\\b|\\bGLOBAL40\\b|\\bGLOBAL41\\b|\\bGLOBAL42\\b|\\bGLOBAL43\\b|\\bGLOBAL44\\b|\\bGLOBAL45\\b|\\bGLOBAL46\\b|\\bGLOBAL47\\b|\\bGLOBAL48\\b|\\bGLOBAL49\\b|\\bGLOBAL50\\b|\\bGLOBAL51\\b|\\bGLOBAL52\\b|\\bGLOBAL53\\b|\\bGLOBAL54\\b|\\bGLOBAL55\\b|\\bGLOBAL56\\b|\\bGLOBAL57\\b|\\bGLOBAL58\\b|\\bGLOBAL59\\b|\\bGLOBAL60\\b|\\bGLOBAL61\\b|\\bGLOBAL62\\b|\\bGLOBAL63\\b|\\bGLOBAL64\\b|\\bGLOBAL65\\b|\\bGLOBAL66\\b|\\bGLOBAL67\\b|\\bGLOBAL68\\b|\\bGLOBAL69\\b|\\bGLOBAL70\\b|\\bGLOBAL71\\b|\\bGLOBAL72\\b|\\bGLOBAL73\\b|\\bGLOBAL74\\b|\\bGLOBAL75\\b|\\bGLOBAL76\\b|\\bGLOBAL77\\b|\\bGLOBAL78\\b|\\bGLOBAL79\\b|\\bGLOBAL80\\b|\\bGLOBAL81\\b|\\bGLOBAL82\\b|\\bGLOBAL83\\b|\\bGLOBAL84\\b|\\bGLOBAL85\\b|\\bGLOBAL86\\b|\\bGLOBAL87\\b|\\bGLOBAL88\\b|\\bGLOBAL89\\b|\\bGLOBAL90\\b|\\bGLOBAL91\\b|\\bGLOBAL92\\b|\\bGLOBAL93\\b|\\bGLOBAL94\\b|\\bGLOBAL95\\b|\\bGLOBAL96\\b|\\bGLOBAL97\\b|\\bGLOBAL98\\b|\\bGLOBAL99\\b|\\bHostBeat\\b|\\bLastKnob\\b|\\bMIDINote\\b|\\bGLOBAL0\\b|\\bGLOBAL1\\b|\\bGLOBAL2\\b|\\bGLOBAL3\\b|\\bGLOBAL4\\b|\\bGLOBAL5\\b|\\bGLOBAL6\\b|\\bGLOBAL7\\b|\\bGLOBAL8\\b|\\bGLOBAL9\\b|\\bHostBar\\b|\\bLastPad\\b|\\bYES\\b|\\bNO\\b",
+          "name": "variable.other.global.mozaic"
+        }
+      ]
+    }
+  }
+}

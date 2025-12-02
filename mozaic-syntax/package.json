@@ -1,0 +1,31 @@
+{
+  "name": "mozaic-syntax",
+  "displayName": "Mozaic Language Support",
+  "description": "Syntax highlighting for Mozaic (.moz) files (generated from UEW)",
+  "version": "0.0.1",
+  "publisher": "moe",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "mozaic",
+        "aliases": [
+          "Mozaic",
+          "mozaic"
+        ],
+        "extensions": [
+          ".moz"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mozaic",
+        "scopeName": "source.mozaic",
+        "path": "./syntaxes/mozaic.tmLanguage.json"
+      }
+    ]
+  }
+}
